@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.pinyon-script-regular {
+  font-family: "Pinyon Script", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+*{
+    background-color:#F4F4EC
+}
+
+
+
