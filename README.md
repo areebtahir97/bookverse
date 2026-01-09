@@ -19,7 +19,6 @@
   <li>🔐 User authentication (Signup / Login / Logout)</li>
   <li>🛡️ Protected routes for authenticated users</li>
   <li>💾 Persistent library stored in a database</li>
-  <li>🖼️ Graceful fallback for missing book covers</li>
 </ul>
 
 <hr />
