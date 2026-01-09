@@ -5,6 +5,7 @@ import { useEffect } from 'react'
 import { Link } from 'react-router'
 import {useAuth} from '../context/AuthContext.jsx'
 import { useLocation } from "react-router-dom";
+import { API_BASE_URL } from '../../../server/configs/api.js'
 
 const Header = () => {
   const {user, setUser, setIsLoggedIn,isLoggedIn } = useAuth();
@@ -15,7 +16,7 @@ const Header = () => {
 
 
   async function handleLogout() {
-    await fetch("http://localhost:3000/api/logout", {
+    await fetch(`${API_BASE_URL}/api/logout`, {
       method: "POST",
       credentials: "include", 
     });

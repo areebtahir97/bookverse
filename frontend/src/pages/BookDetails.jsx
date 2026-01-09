@@ -3,6 +3,7 @@ import { dummyBooks } from "../data/dummyBooks";
 import { useAuth } from "../context/AuthContext";
 import { useState,useEffect } from "react";
 import noCover from "../assets/no-cover.png";
+import { API_BASE_URL } from "../../../server/configs/api";
 
 function BookDetails() {
   const [description, setDescription] = useState("");
@@ -57,7 +58,7 @@ function BookDetails() {
       return;
     }
 
-    const res = await fetch("http://localhost:3000/api/library", {
+    const res = await fetch(`${API_BASE_URL}/api/library`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       credentials: "include",
@@ -82,7 +83,7 @@ function BookDetails() {
 
   async function handleRemove() {
     const res = await fetch(
-      `http://localhost:3000/api/library/${book.id}`,
+      `${API_BASE_URL}/api/library/${book.id}`,
       {
         method: "DELETE",
         credentials: "include",

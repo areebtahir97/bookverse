@@ -2,6 +2,7 @@ import React from 'react'
 import '../index.css'
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router'
+import { API_BASE_URL } from '../../../server/configs/api'
 
 const Signup = () => {
   const navigate=useNavigate()
@@ -15,7 +16,7 @@ const Signup = () => {
     setError("");
 
     try {
-      const res = await fetch("http://localhost:3000/api/signup", {
+      const res = await fetch(`${API_BASE_URL}/api/signup`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { createContext, useState,useContext } from "react";
+import { API_BASE_URL } from "../../../server/configs/api";
 
 const AuthContext=createContext()
 
@@ -12,7 +13,7 @@ function AuthProvider({children}){
     useEffect(()=>{
         async function fetchMe() {
             try {
-                const res=await fetch("http://localhost:3000/api/me",{
+                const res=await fetch(`${API_BASE_URL}/api/me`,{
                     credentials:"include",
                 })
 
@@ -39,7 +40,7 @@ function AuthProvider({children}){
     useEffect(() => {
     async function fetchLibrary() {
       try {
-        const res = await fetch("http://localhost:3000/api/library", {
+        const res = await fetch(`${API_BASE_URL}/api/library`, {
           credentials: "include",
         });
 
