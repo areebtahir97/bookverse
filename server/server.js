@@ -3,7 +3,7 @@ console.log("DB_PASSWORD type:", typeof process.env.DB_PASSWORD);
 import express from 'express'
 import db from './configs/db.js'
 import cookieParser from 'cookie-parser'
-import userRouter from './Routes/userRoutes.js';
+import userRouter from './routes/userRoutes.js';
 import libraryRouter from './routes/libraryRoutes.js'
 import cors from 'cors'
 import bodyParser from 'body-parser'
