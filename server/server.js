@@ -13,8 +13,17 @@ const app=express();
 app.use(express.json())
 app.use(
   cors({
-    origin: "https://bookverse-silk.vercel.app", 
-    credentials: true,               
+    origin: (origin, callback) => {
+      if (
+        !origin ||
+        origin.endsWith(".vercel.app")
+      ) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+    credentials: true,
   })
 );
 app.use(bodyParser.urlencoded({ extended: true }));
