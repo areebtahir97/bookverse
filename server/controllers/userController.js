@@ -80,12 +80,10 @@ try {
 
     //set http only cookie
     res.cookie("token", token, {
-      httpOnly: true,
-      secure: true, 
-      sameSite: "none",
-      domain: ".onrender.com",
-      maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
-    });
+  httpOnly: true,
+  secure: true,          // REQUIRED on HTTPS
+  sameSite: "none",      // REQUIRED for cross-site
+});
 
     res.json({
       message: "Login successful",
@@ -128,11 +126,11 @@ export const me=async(req,res)=>{
 
 //logout api
 export const  logout=(req,res)=>{
-    res.clearCookie("token",{
-        httpOnly:true,
-        sameSite:"strict",
-        secure:false,
-    })
+    res.clearCookie("token", {
+  httpOnly: true,
+  secure: true,
+  sameSite: "none",
+});
 
     res.json({message:"Logged out succesfully"})
 }
