@@ -46,7 +46,7 @@ const Header = () => {
     transition hover:scale-105'>Signup</Link>
         </div>
       ) : (
-        <div className="flex items-center gap-2 sm:gap-6 ml-2 sm:ml-1">
+        <div className="flex items-center gap-2 sm:gap-6 ml-1 sm:ml-1">
   {isLoggedIn && (
     <span className="text-gray-600 text-sm sm:text-base whitespace-nowrap">
       Hi, {user?.username}
