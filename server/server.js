@@ -13,7 +13,7 @@ const app=express();
 app.use(express.json())
 app.use(
   cors({
-    origin: "https://bookverse-gksg.onrender.com", 
+    origin: "https://bookverse-silk.vercel.app", 
     credentials: true,               
   })
 );
