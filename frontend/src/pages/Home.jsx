@@ -84,7 +84,7 @@ export default function Home() {
           Your personal book companion.
       </p>
       <BookSearch onSearch={handleSearch} onChange={setSeacrhText} value={searchText} />
-      <h2 className="text-2xl font-semibold mb-6">
+      <h2 className="text-2xl font-semibold mb-6 mt-4">
         {searchText ? "Search Results" : "Trending Books"}
       </h2>
 

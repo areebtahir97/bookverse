@@ -34,10 +34,16 @@ const Header = () => {
           <img className='w-9 sm:w-8 ' src={book_logo} alt="" />
           <h1 className='pinyon-script-regular  text-4xl'>Bookverse</h1>
       </div>
-        {!isLoggedIn ? (<div className='flex items-center gap-4 sm:gap-3'>
+        {!isLoggedIn ? (<div className='flex items-center gap-4 sm:gap-3 ml-auto'>
           <Link to={"/library"} className="text-gray-700 font-medium hover:text-black">My Library</Link>
-                <Link to={'/login'} className='flex text-white items-center gap-2 bg-[#615DEC] px-4 sm:px-6 py-1.5 sm:py-3 rounded-full hover:scale-105 transition-all duration-700'>Login</Link>
-                <Link to={'/signup'} className='flex  text-white items-center gap-2  bg-[#615DEC] px-4 sm:px-6 py-1.5 sm:py-3 rounded-full hover:scale-105 transition-all duration-700'>Signup</Link>
+                <Link to={'/login'} className='bg-[#615DEC] text-white rounded-full
+    px-3 py-1.5 text-sm
+    sm:px-6 sm:py-3 sm:text-base
+    transition hover:scale-105'>Login</Link>
+                <Link to={'/signup'} className='bg-[#615DEC] text-white rounded-full
+    px-3 py-1.5 text-sm
+    sm:px-6 sm:py-3 sm:text-base
+    transition hover:scale-105'>Signup</Link>
         </div>
       ) : (
         <div className="flex items-center gap-6">
